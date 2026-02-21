@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonylist - Anonymous YouTube Playlists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.5.0/lz-string.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">Anon<span>ylist</span></div>
+      <div class="tagline">Anonymous YouTube Playlists</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="panel">
+      <div class="panel-title">Create Playlist</div>
+      
+      <div class="add-section">
+        <div class="input-group">
+          <input type="text" id="urlInput" placeholder="Paste YouTube URL here...">
+          <button class="btn" id="addBtn">Add</button>
+        </div>
+        <div class="drop-zone" id="dropZone">
+          <div class="drop-zone-text">or drag & drop URLs here</div>
+          <div class="drop-zone-hint">Supports multiple URLs separated by newlines</div>
+        </div>
+      </div>
+
+      <div class="stats" id="stats" style="display: none;">
+        <span><strong id="videoCount">0</strong> videos</span>
+      </div>
+
+      <div class="playlist" id="playlist">
+        <div class="playlist-empty" id="emptyState">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+          <div>Your playlist is empty.<br>Add some videos!</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel right-panel">
+      <div class="panel-title">Share Playlist</div>
+      
+      <button class="btn secondary new-list-btn" id="newListBtn">+ Create New List</button>
+
+      <div class="share-section">
+        <label>Playlist Name</label>
+        <input type="text" id="playlistName" placeholder="My Awesome Playlist">
+      </div>
+
+      <div class="share-section">
+        <button class="btn" id="generateBtn" style="width: 100%;">Generate Share Link</button>
+      </div>
+
+      <div class="share-section" id="outputSection" style="display: none;">
+        <label>Share URL</label>
+        <div class="output-group">
+          <textarea id="shareUrl" readonly></textarea>
+          <button class="copy-btn" id="copyBtn">Copy</button>
+        </div>
+        <div class="url-size" id="urlSize"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

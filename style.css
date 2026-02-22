@@ -336,6 +336,12 @@ input[type="text"]::placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: inherit;
+  text-decoration: none;
+}
+
+.video-title:hover {
+  color: var(--secondary);
 }
 
 .video-url {
@@ -344,6 +350,24 @@ input[type="text"]::placeholder {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.video-thumb {
+  width: 120px;
+  height: 68px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: var(--surface-hover);
+  flex-shrink: 0;
+}
+
+.video-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-info a:hover {
+  color: var(--secondary);
 }
 
 .delete-btn {

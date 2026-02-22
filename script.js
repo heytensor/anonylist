@@ -94,9 +94,11 @@ function renderPlaylist() {
       item.innerHTML = `
         <div class="drag-handle"><span></span><span></span><span></span></div>
         <div class="video-index">${index + 1}</div>
-        <img class="video-thumb" src="${video.thumbnail}" alt="" loading="lazy" onerror="this.style.display='none'">
+        <a href="${video.url}" target="_blank" rel="noopener noreferrer">
+          <img class="video-thumb" src="${video.thumbnail}" alt="" loading="lazy" onerror="this.style.display='none'">
+        </a>
         <div class="video-info">
-          <div class="video-title">${video.title}</div>
+          <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="video-title">${video.title}</a>
           <div class="video-url">${video.url}</div>
         </div>
         <button class="delete-btn" title="Remove">×</button>
